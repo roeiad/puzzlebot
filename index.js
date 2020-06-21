@@ -1,8 +1,11 @@
 ﻿
-var Discord = require('discord.io');
+const Discord = require("discord.io");
+const Ddiscord = require("discord.js");
 var logger = require('winston');
 var auth = require('./auth.json');
 var respond=true;
+
+let tocken=auth.token
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
@@ -23,15 +26,18 @@ function getDadJoke(){
 	 var randInt= Math.floor(Math.random()* (max - min)) + min;
 	 return selectDadJoke[randInt];
 }
+
+
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
+bot.sendMessage("im on")
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
 
-    if (message.toLowerCase().indexOf("i'm ")>-1 && user!="dadBot" && respond) {
+    if (message.toLowerCase().indexOf("i'm ")>-1 && user!="puzzle-bot" && respond) {
 		//Classic Dad
   			var str = ""
   			var i=message.toLowerCase().indexOf("i'm ");
@@ -40,41 +46,26 @@ bot.on('message', function (user, userID, channelID, message, evt) {
   			while (myStr[i]==""||myStr[i]=="a" || myStr[i]=="the" || myStr[i]=="an"){
   				i++;
   			}
-  			var test=myStr[i].toLowerCase();
   			var str=myStr[i];
   		//Debug bot.sendMessage({to:channelID, message:i});
-  			bot.sendMessage({to:channelID, message:"Hi " + str + ", I'm dadBot!  Pleased to meat you, snot a problem!"});
+  			bot.sendMessage({to:channelID, message:"Hi " + str + ", I'm puzzlebot!  Pleased to meat you, snot a problem!"});
     }
-    else if (message.toLowerCase().indexOf("im ")>-1 && user!="dadBot" && respond) {
-    //Classic Dad
-        var str = ""
-        var i=message.toLowerCase().indexOf("im ");
-        var myStr=(message.substring(i+4)).split(" ");
-        i=0;
-        while (myStr[i]==""||myStr[i]=="a" || myStr[i]=="the" || myStr[i]=="an"){
-          i++;
-        }
-        var test=myStr[i].toLowerCase();
-        var str=myStr[i];
-      //Debug bot.sendMessage({to:channelID, message:i});
-        bot.sendMessage({to:channelID, message:"Hi " + str + ", I'm dadBot!  Pleased to meat you, snot a problem!"});
-    }
-    else if(message.toLowerCase().indexOf("!dadjoke")>-1 && user!="dadBot" && respond){
+    else if(message.toLowerCase().indexOf("!dadjoke")>-1 && user!="puzzlebot" && respond){
 	 //Get a random dad joke
 			bot.sendMessage({to:channelID, message:getDadJoke()});
     }
 	  //stop the pain
-	  else if(message.toLowerCase().indexOf("!dadbotstop")>-1 && user!="dadBot" && respond){
+	  else if(message.toLowerCase().indexOf("!puzzlebotstop")>-1 && user!="puzzlebot" && respond){
 			  bot.sendMessage({to:channelID, message:"There is not stopping dadTron.  Just kidding.  \nType '!dadbotsAssemble' to start me again."});
 			  respond=false;
 	  }
 	  //i'm a glutton lets get dad bot back
-	  else if(message.toLowerCase().indexOf("!dadbotstart")>-1 && user!="dadBot" && !respond){
-			  bot.sendMessage({to:channelID, message:"You've got to be dadding me.\nType '!dadbotStop' to stop dad facts. \n\n"+getDadJoke()});
+	  else if(message.toLowerCase().indexOf("!puzzleotstart")>-1 && user!="puzzlebot" && !respond){
+			  bot.sendMessage({to:channelID, message:"You've got to be dadding me.\nType '!puzzlebotStop' to stop dad facts. \n\n"+getDadJoke()});
 			  respond=true;
 	  }
 	  //dadbot briefing
-	  else if(message.toLowerCase().indexOf("!dadbot")>-1 && user!="dadBot"&& respond ){
+	  else if(message.toLowerCase().indexOf("!puzzlebot")>-1 && user!="puzzlebot"&& respond ){
 			bot.sendMessage({to:channelID, message:"Beeperuski Booperino I am the grand DadBotino!  Your fish is my commandidoodily. \n commands: \n '!dadbotStop' to stop \n '!dadbotStart' to turn back on"});
 	  }
 

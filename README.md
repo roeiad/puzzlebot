@@ -9,3 +9,4 @@ returns the classic, "Hi [word], I'm dadBot, nice to meat you!  Snot a problem!"
 
 
 ![](https://github.com/willmac321/DiscordDadBot/blob/master/demo.PNG)
+"# puzzlebot" 
