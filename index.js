@@ -13,7 +13,7 @@ logger.add(logger.transports.Console, {
 });
 // logger.level = 'debug';
 var bot = new Discord.Client({
-    token: auth.token,
+    token: process.env.token,
     autorun: true
 });
 //the dad joke library
