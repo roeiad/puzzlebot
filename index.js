@@ -1,11 +1,9 @@
 ﻿const Discord = require("discord.io")
 const Ddiscord = require("discord.js");
 var logger = require('winston');
-var auth = require('./auth.json');
 var respond = true;
 var punList = require('./puns.json')
 
-let tocken = auth.token
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
