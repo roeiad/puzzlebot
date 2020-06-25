@@ -1,10 +1,9 @@
 let punList = require('.././puns.json')
 class punsjoke
 {
-    getPuns(channelID) {
+    getPuns() {
         let puns = punList.puns;
-        puns= puns[Math.floor(Math.random() * puns.length)];
-      return  bot.sendMessage({to: channelID, message: puns()});
+        return  puns[Math.floor(Math.random() * puns.length)];
 
     }
 }
