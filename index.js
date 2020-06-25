@@ -1,8 +1,8 @@
 ﻿const Discord = require("discord.io")
 let logger = require('winston');
 let respond = true;
-let punList = require('./puns.json')
 let dadjokes = require('./dadjokes.json')
+let punsjoke = require ("./commands/puns")
 let botUser = "puzzle-bot"
 
 logger.remove(logger.transports.Console);
@@ -20,10 +20,7 @@ function getDadJoke() {
 
 }
 
-function getPuns() {
-    let puns = punList.puns;
-    return puns[Math.floor(Math.random() * puns.length)];
-}
+
 
 
 bot.on('ready', function (evt) {
@@ -53,7 +50,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         bot.sendMessage({to: channelID, message: getDadJoke()});
     }
     else if (message.toLowerCase().indexOf("!puns") > -1 && user !== botUser && respond) {
-        bot.sendMessage({to: channelID, message: getPuns()});
+punsjoke.getPuns
     }
     else if (message.toLowerCase().indexOf("!puzzlebotstop") > -1 && user !== botUser && respond) {
         bot.sendMessage({

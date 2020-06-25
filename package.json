@@ -4,13 +4,14 @@
   "description": "DadMode",
   "main": "dadBot.js",
   "author": "Dad",
-    "scripts": {
+  "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "discord.io": "github:woor/discord.io#gateway_v6",
     "discord.js": "^12.2.0",
     "node": "^14.4.0",
+    "node.js": "0.0.1-security",
     "winston": "^2.4.1"
   }
 }
