@@ -46,7 +46,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     } else if (message.toLowerCase().indexOf("!dadjoke") > -1 && user !== botUser && respond) {
         bot.sendMessage({to: channelID, message: getDadJoke()});
     } else if (message.toLowerCase().indexOf("!puns") > -1 && user !== botUser && respond) {
-          bot.sendMessage({to: channelID, message: punsjoke.getPuns()});
+          bot.sendMessage({to: channelID, message: punsjoke()});
     } else if (message.toLowerCase().indexOf("!puzzlebotstop") > -1 && user !== botUser && respond) {
         bot.sendMessage({
             to: channelID,
