@@ -1,9 +1,9 @@
 let punList = require('.././puns.json')
-class punsjoke
+class puns
 {
-     static getPuns() {
+     static getAPun() {
         let puns =  punList.puns;
         return  puns[Math.floor(Math.random() * puns.length)];
     }
 }
-module.exports=punsjoke
+module.exports=puns
