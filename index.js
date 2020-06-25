@@ -45,9 +45,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         });
     } else if (message.toLowerCase().indexOf("!dadjoke") > -1 && user !== botUser && respond) {
         bot.sendMessage({to: channelID, message: getDadJoke()});
-    } else if (message.toLowerCase().indexOf("!puns") > -1 && user !== botUser && respond) {
-          bot.sendMessage({to: channelID, message: punsjoke});
-    } else if (message.toLowerCase().indexOf("!puzzlebotstop") > -1 && user !== botUser && respond) {
+    }
+    else if (message.toLowerCase().indexOf("!puns") > -1 && user !== botUser && respond) {
+          bot.sendMessage({to: channelID, message: punsjoke.getPuns()});
+    }
+    else if (message.toLowerCase().indexOf("!puzzlebotstop") > -1 && user !== botUser && respond) {
         bot.sendMessage({
             to: channelID,
             message: "There is not stopping puzzletron.  Just kidding.  \nType '!puzzlebotstart' to start me again."
@@ -59,7 +61,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             message: "You've got to be joking me.\nType '!puzzlebotStop' to stop dad facts. \n\n" + getDadJoke()
         });
         respond = true;
-    } else if (message.toLowerCase().indexOf("!puzzlebot") > -1 && user !== botUser && respond) {
+    }
+    else if (message.toLowerCase().indexOf("!puzzlebot") > -1 && user !== botUser && respond) {
         bot.sendMessage({
             to: channelID,
             message: "Beeperuski Booperino I am the grand puzzleBotino!  Your fish is my commandidoodily. \n commands: \n '!dadjokes' for a random dad joke  \n '!puns' for a random pun \n '!puzzlebotstop' to stop \n '!puzzlebotStart' to turn back on"
