@@ -7,8 +7,8 @@ Base on [DiscordDadBot](https://github.com/willmac321/DiscordDadBot) by [willmac
 
 | Command       | Description                                                                                                              
 | ------------- | ------------------------------------------------------------------------------------------------------------------------- 
-| p!help        | shows a list of all the commands      
-| p!start       | start the bot                                                                                           
-| p!stop       | stop the bot                                                                                           
-| p!puns        | return a random pun                                                                                           
-| p!dadjokes       | return a random dad joke                                                                
+| puzzle!help        | shows a list of all the commands      
+| puzzle!start       | start the bot                                                                                           
+| puzzle!stop       | stop the bot                                                                                           
+| puzzle!puns        | return a random pun                                                                                           
+| puzzle!dadjokes       | return a random dad joke                                                                
