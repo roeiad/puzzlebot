@@ -1,9 +1,9 @@
 {
-  "name": "DadBot",
-  "version": "1.0.0",
-  "description": "DadMode",
-  "main": "dadBot.js",
-  "author": "Dad",
+  "name": "puzzlebot",
+  "version": "1.0.1",
+  "description": "here to make you suffer",
+  "main": "index.js",
+  "author": "netro",
   "scripts": {
     "start": "node index.js"
   },
