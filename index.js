@@ -1,7 +1,7 @@
 ﻿const Discord = require("discord.io")
 let logger = require('winston');
 let respond = true;
-let dadJokes = require('./commands/dadJokes')
+let dadjokes = require('./commands/dadJokes')
 let puns = require("./commands/puns")
 let text = require("./text.json")
 let {prefix,botUser}=require("./conf.json")
@@ -23,8 +23,14 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
+    console.log(user + " - " + userID);
+    console.log("in " + channelID);
+    console.log(message);
+    console.log("----------");
+    if(message && user===botUser) return;
 
-    if (message.toLowerCase().indexOf("i'm " || "im") > -1 && user !== botUser && respond) {
+
+    if (message.toLowerCase().indexOf("i'm " || "im") > -1  && respond) {
         let i = message.toLowerCase().indexOf("i'm ");
         let myStr = (message.substring(i + 4)).split(" ");
         i = 0;
@@ -36,23 +42,23 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi " + str + text.im
         });
-    } else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && user !== botUser && respond) {
-        bot.sendMessage({to: channelID, message: dadJokes.getADadJoke()});
-    } else if (message.toLowerCase().indexOf(prefix + "puns") > -1 && user !== botUser && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1  && respond) {
+        bot.sendMessage({to: channelID, message: dadjokes.getADadJoke()});
+    } else if (message.toLowerCase().indexOf(prefix + "puns") > -1  && respond) {
         bot.sendMessage({to: channelID, message: puns.getAPun()});
-    } else if (message.toLowerCase().indexOf(prefix + "stop") > -1 && user !== botUser && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "stop") > -1  && respond) {
         bot.sendMessage({
             to: channelID,
             message: text.stop
         });
         respond = false;
-    } else if (message.toLowerCase().indexOf(prefix + "start") > -1 && user !== botUser && !respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "start") > -1  && !respond) {
         bot.sendMessage({
             to: channelID,
             message: text.start
         });
         respond = true;
-    } else if (message.toLowerCase().indexOf(prefix + "help") > -1 && user !== botUser && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "help") > -1  && respond) {
         bot.sendMessage({
             to: channelID,
             message: text.help
