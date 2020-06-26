@@ -23,10 +23,6 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-    console.log(user + " - " + userID);
-    console.log("in " + channelID);
-    console.log(message);
-    console.log("----------");
     if(message && user===botUser) return;
 
 
