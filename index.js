@@ -23,15 +23,14 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-
+    console.log(user + " - " + userID);
+    console.log("in " + channelID);
+    console.log(message);
+    console.log("----------");
     if(message && user===botUser) return;
 
 
     if (message.toLowerCase().indexOf("i'm " || "im") > -1  && respond) {
-        console.log(user + " - " + userID);
-        console.log("in " + channelID);
-        console.log(message);
-        console.log("----------");
         let i = message.toLowerCase().indexOf("i'm ");
         let myStr = (message.substring(i + 4)).split(" ");
         i = 0;
@@ -44,42 +43,22 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             message: "Hi " + str + text.im
         });
     } else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1  && respond) {
-        console.log(user + " - " + userID);
-        console.log("in " + channelID);
-        console.log(message);
-        console.log("----------");
         bot.sendMessage({to: channelID, message: dadjokes.getADadJoke()});
     } else if (message.toLowerCase().indexOf(prefix + "puns") > -1  && respond) {
-        console.log(user + " - " + userID);
-        console.log("in " + channelID);
-        console.log(message);
-        console.log("----------");
         bot.sendMessage({to: channelID, message: puns.getAPun()});
     } else if (message.toLowerCase().indexOf(prefix + "stop") > -1  && respond) {
-        console.log(user + " - " + userID);
-        console.log("in " + channelID);
-        console.log(message);
-        console.log("----------");
         bot.sendMessage({
             to: channelID,
             message: text.stop
         });
         respond = false;
     } else if (message.toLowerCase().indexOf(prefix + "start") > -1  && !respond) {
-        console.log(user + " - " + userID);
-        console.log("in " + channelID);
-        console.log(message);
-        console.log("----------");
         bot.sendMessage({
             to: channelID,
             message: text.start
         });
         respond = true;
     } else if (message.toLowerCase().indexOf(prefix + "help") > -1  && respond) {
-        console.log(user + " - " + userID);
-        console.log("in " + channelID);
-        console.log(message);
-        console.log("----------");
         bot.sendMessage({
             to: channelID,
             message: text.help
