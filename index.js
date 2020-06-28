@@ -1,3 +1,4 @@
+
 ﻿const Discord = require("discord.io")
 let logger = require('winston');
 let respond = true;
@@ -26,9 +27,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message && user === botUser) return;
 
 
-
-    if (message.toLowerCase().indexOf("i'm " || "im ") > -1  && respond) {
-        let i = message.toLowerCase().indexOf("i'm"||"im");
+    if (message.toLowerCase().indexOf("i'm " ) > -1 && respond) {
+        let i = message.toLowerCase().indexOf("i'm" || "im");
         let myStr = (message.substring(i + 4)).split(" ");
         i = 0;
         while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
@@ -39,6 +39,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi " + str + text.im
         });
+    } else if (message.toLowerCase().indexOf("i'm " ) > -1 && userID === "206889823187894272" && respond) {
+    bot.sendMessage({
+        to: channelID,
+        message: "Hi bitch" + text.im
+    });
+}     else if (message.toLowerCase().indexOf("i'm ") > -1 && userID === "173027655719845888" && respond) {
+    bot.sendMessage({
+        to: channelID,
+        message: "Hi master" + text.im
+    });
+}
 
      else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1  && respond) {
         bot.sendMessage({to: channelID, message: dadjokes.getADadJoke()});
