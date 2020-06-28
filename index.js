@@ -1,4 +1,4 @@
-﻿const Discord = require("discord.io")
+const Discord = require("discord.io")
 let logger = require('winston');
 let respond = true;
 let dadjokes = require('./commands/dadJokes')
