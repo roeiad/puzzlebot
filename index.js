@@ -26,8 +26,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message && user === botUser) return;
 
 
-    if (message.toLowerCase().indexOf("i'm " || "im ") > -1 && respond) {
-        let i = message.toLowerCase().indexOf("i'm" || "im");
+
+    if (message.toLowerCase().indexOf("i'm " || "im ") > -1  && respond) {
+        let i = message.toLowerCase().indexOf("i'm"||"im");
         let myStr = (message.substring(i + 4)).split(" ");
         i = 0;
         while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
