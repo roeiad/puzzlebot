@@ -1,6 +1,6 @@
 {
   "start": "You've got to be joking me.\nType `!puzzlebotStop` to stop dad facts. \n\n",
   "stop": "There is not stopping puzzletron.  Just kidding.  \nType `!puzzlebotstart` to start me again.",
-  "help": "Beeperuski Booperino I am the grand puzzleBotino!  Your fish is my commandidoodily. \n commands: \n `puzzle!dadjokes` for a random dad joke  \n `puzzle!puns` for a random pun \n puzzle!stop` to stop \n `puzzle!Start` to turn back on \n **created by netro**",
+  "help": "Beeperuski Booperino I am the grand puzzleBotino!  Your fish is my commandidoodily. \n commands: \n `puzzle!dadjokes` for a random dad joke  \n `puzzle!puns` for a random pun \n `puzzle!stop` to stop \n `puzzle!Start` to turn back on \n **created by netro**",
   "im": ", I'm puzzlebot!  Pleased to meat you, snot a problem!"
 }
