@@ -1,3 +1,4 @@
+
 ﻿const Discord = require("discord.io")
 let logger = require('winston');
 let respond = true;
