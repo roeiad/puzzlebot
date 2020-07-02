@@ -31,7 +31,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi bitch" + text.im
         });
-    } else if (message.toLowerCase().indexOf("i'm ") > -1 && user === "173027655719845888" && respond) {
+    } else if (message.toLowerCase().indexOf("i'm ") > -1 && userID === "173027655719845888" && respond) {
         bot.sendMessage({
             to: channelID,
             message: "Hi master" + text.im
@@ -39,7 +39,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     }
     else if (message.toLowerCase().indexOf("i want oreo") > -1   && respond) {
         bot.uploadFile({
-            to: userID,
+            to: message.a,
             file: "https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif"
         });
     }
@@ -80,6 +80,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         bot.sendMessage({
             to: channelID,
             message: text.help
+        });
+    }
+     else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
+         let userinfo =bot.getUser({
+             userID: "173027655719845888",
+         });
+        bot.sendMessage({
+            to: channelID,
+            embed: userinfo
         });
     }
 
