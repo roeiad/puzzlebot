@@ -1,19 +1,17 @@
-let settings = {
-    "url": "https://discordapp.com/api/users/173027655719845888",
-    "method": "GET",
-    "timeout": 0,
-    "headers": {
-        "Authorization": "{"+process.env.token+"}"
-    },
+
+let myHeaders = new Headers();
+myHeaders.append("Authorization", "{" + process.env.token + "}");
+
+let requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
 };
 
 class getuserinfo {
     static getInfo() {
-        $.ajax(settings).done(
-            function (response) {
-                return response;
-            }
-        );
+        return fetch("https://discordapp.com/api/users/173027655719845888", requestOptions)
     }
 }
-module.exports=getuserinfo
+
+module.exports = getuserinfo
