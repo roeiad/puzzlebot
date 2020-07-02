@@ -5,7 +5,7 @@ let dadjokes = require('./commands/dadJokes')
 let puns = require("./commands/puns")
 let text = require("./text.json")
 let {prefix, botUser} = require("./conf.json")
-let userInfo =require("./commands/getuserinfo")
+// let userInfo =require("./commands/getuserinfo")
 // let puzzle = "543614670796488714"
 
 logger.remove(logger.transports.Console);
@@ -83,22 +83,22 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             message: text.help
         });
     }
-     else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
-        bot.sendMessage({
-            to: channelID,
-            embed: {
-                color: 6826080,
-                footer: {
-                    text: userInfo.getInfo()
-                },
-                thumbnail:
-                    {
-                        url: ''
-                    },
-                title: '',
-                url: ''
-            }
-        });
-    }
+    //  else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
+    //     bot.sendMessage({
+    //         to: channelID,
+    //         embed: {
+    //             color: 6826080,
+    //             footer: {
+    //                 text: userInfo.getInfo()
+    //             },
+    //             thumbnail:
+    //                 {
+    //                     url: ''
+    //                 },
+    //             title: '',
+    //             url: ''
+    //         }
+    //     });
+    // }
 
 });
