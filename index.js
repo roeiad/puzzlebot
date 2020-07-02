@@ -5,7 +5,7 @@ let dadjokes = require('./commands/dadJokes')
 let puns = require("./commands/puns")
 let text = require("./text.json")
 let {prefix, botUser} = require("./conf.json")
-let puzzle = "543614670796488714"
+// let puzzle = "543614670796488714"
 
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
