@@ -40,7 +40,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     }
     else if (message.toLowerCase().indexOf("i want oreo") > -1   && respond) {
         bot.uploadFile({
-            to: userID,
+            to: channelID,
             file: "https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif"
         });
     }
