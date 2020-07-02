@@ -3,7 +3,7 @@ let settings = {
     "method": "GET",
     "timeout": 0,
     "headers": {
-        "Authorization": "{NzI2NzE3ODQyOTU4ODQzOTM2.Xv3OXQ.Kap8R03AbrGm2fFIncWF0vNQl_Y}"
+        "Authorization": "{"+process.env.token+"}"
     },
 };
 
