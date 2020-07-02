@@ -56,27 +56,27 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             message: "Hi " + str + text.im
         });
     }
-    if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && respond) {
+   else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && respond) {
         bot.sendMessage({to: channelID, message: dadjokes.getADadJoke()});
     }
-     if (message.toLowerCase().indexOf(prefix + "pun") > -1 && respond) {
+  else if (message.toLowerCase().indexOf(prefix + "pun") > -1 && respond) {
         bot.sendMessage({to: channelID, message: puns.getAPun()});
     }
-      if (message.toLowerCase().indexOf(prefix + "stop") > -1 && respond) {
+    else  if (message.toLowerCase().indexOf(prefix + "stop") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
             message: text.stop
         });
         respond = false;
     }
-      if (message.toLowerCase().indexOf(prefix + "start") > -1 && !respond) {
+     else if (message.toLowerCase().indexOf(prefix + "start") > -1 && !respond) {
         bot.sendMessage({
             to: channelID,
             message: text.start
         });
         respond = true;
     }
-      if (message.toLowerCase().indexOf(prefix + "help") > -1 && respond) {
+     else if (message.toLowerCase().indexOf(prefix + "help") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
             message: text.help
