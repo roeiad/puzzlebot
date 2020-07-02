@@ -37,7 +37,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             message: "Hi master" + text.im
         });
     }
-    else if (message.toLowerCase().indexOf("i want oreo") > -1 && userID=== users.puzzle  && respond) {
+    else if (message.toLowerCase().indexOf("i want oreo") > -1   && respond) {
         bot.sendMessage({
             to: userID,
             message: "https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif"
