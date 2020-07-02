@@ -5,7 +5,7 @@ let dadjokes = require('./commands/dadJokes')
 let puns = require("./commands/puns")
 let text = require("./text.json")
 let {prefix, botUser} = require("./conf.json")
-let info =require("./commands/getuserinfo")
+let userInfo =require("./commands/getuserinfo")
 // let puzzle = "543614670796488714"
 
 logger.remove(logger.transports.Console);
@@ -24,7 +24,7 @@ bot.on('ready', function (evt) {
     bot.sendMessage("i'm on")
 });
 
-bot.on('message', function (user, userID, channelID, message,embed, evt) {
+bot.on('message', function (user, userID, channelID, message, evt) {
     if (message && user === botUser) return;
 
     if (message.toLowerCase().indexOf("i'm ") > -1 && userID === "206889823187894272" && respond) {
@@ -86,7 +86,18 @@ bot.on('message', function (user, userID, channelID, message,embed, evt) {
      else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
-            embed: info.getInfo()
+            embed: {
+                color: 6826080,
+                footer: {
+                    text: userInfo.getInfo()
+                },
+                thumbnail:
+                    {
+                        url: ''
+                    },
+                title: '',
+                url: ''
+            }
         });
     }
 
