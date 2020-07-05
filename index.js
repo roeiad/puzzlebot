@@ -86,18 +86,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
      else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
-            embed: {
-                color: 6826080,
-                footer: {
-                    text: userInfo.getInfo()
-                },
-                thumbnail:
-                    {
-                        url: ''
-                    },
-                title: '',
-                url: ''
-            }
+            message:userInfo.getInfo()
         });
     }
 
