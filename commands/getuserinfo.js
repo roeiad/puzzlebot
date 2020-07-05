@@ -1,17 +1,40 @@
-let request = require('request');
+let https = require('follow-redirects').https;
+let fs = require('fs');
+
 let options = {
     'method': 'GET',
-    'url': 'https://discordapp.com/api/users/173027655719845888',
+    'hostname': 'discordapp.com',
+    'path': '/api/users/173027655719845888',
     'headers': {
         'Authorization': '{NzI2NzE3ODQyOTU4ODQzOTM2.XwGi6A.WK5j0R_sogzlbXcYcE-rD8FBlpw}'
-    }
+    },
+    'maxRedirects': 20
 };
+
 class getuserinfo {
     static getInfo() {
-        request(options, function (error, response) {
-            if (error) throw new Error(error);
-            return response.body;
+
+        let req = https.request(options, function (res) {
+            let chunks = [];
+
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
+
+            res.on("end", function (chunk) {
+                let body = Buffer.concat(chunks);
+                body = body.toString();
+                return body
+            });
+
+            res.on("error", function (error) {
+                console.error(error);
+            });
         });
+
+        req.end();
+
+
     }
 }
 

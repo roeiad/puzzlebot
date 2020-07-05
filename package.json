@@ -10,6 +10,7 @@
   "dependencies": {
     "ajax": "0.0.4",
     "discord.io": "github:woor/discord.io#gateway_v6",
+    "follow-redirects": "^1.12.1",
     "jquery": "^3.5.1",
     "node": "^14.4.0",
     "node.js": "0.0.1-security",
