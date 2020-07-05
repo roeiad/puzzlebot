@@ -23,8 +23,7 @@ class getuserinfo {
 
             res.on("end", function (chunk) {
                 let body = Buffer.concat(chunks);
-                body = body.toString();
-                return body
+                console.log(body.toString());
             });
 
             res.on("error", function (error) {
