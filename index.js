@@ -5,8 +5,10 @@ let dadjokes = require('./commands/dadJokes')
 let puns = require("./commands/puns")
 let text = require("./text.json")
 let {prefix, botUser} = require("./conf.json")
-let userInfo =require("./commands/getuserinfo")
+let inf
+
 // let puzzle = "543614670796488714"
+
 
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
@@ -16,6 +18,7 @@ let bot = new Discord.Client({
     token: process.env.token,
     autorun: true
 });
+
 
 bot.on('ready', function (evt) {
     logger.info('Connected');
@@ -37,14 +40,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi master" + text.im
         });
-    }
-    else if (message.toLowerCase().indexOf("i want oreo") > -1   && respond) {
+    } else if (message.toLowerCase().indexOf("i want oreo") > -1 && respond) {
+
         bot.sendMessage({
             to: userID,
             message: "https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif"
         });
-    }
-    else if (message.toLowerCase().indexOf("i'm ") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf("i'm ") > -1 && respond) {
         let i = message.toLowerCase().indexOf("i'm" || "im");
         let myStr = (message.substring(i + 4)).split(" ");
         i = 0;
@@ -56,38 +58,36 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi " + str + text.im
         });
-    }
-   else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && respond) {
         bot.sendMessage({to: channelID, message: dadjokes.getADadJoke()});
-    }
-  else if (message.toLowerCase().indexOf(prefix + "pun") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "pun") > -1 && respond) {
         bot.sendMessage({to: channelID, message: puns.getAPun()});
-    }
-    else  if (message.toLowerCase().indexOf(prefix + "stop") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "stop") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
             message: text.stop
         });
         respond = false;
-    }
-     else if (message.toLowerCase().indexOf(prefix + "start") > -1 && !respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "start") > -1 && !respond) {
         bot.sendMessage({
             to: channelID,
             message: text.start
         });
         respond = true;
-    }
-     else if (message.toLowerCase().indexOf(prefix + "help") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "help") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
             message: text.help
         });
+    } else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
+        inf = bot.users["173027655719845888"];
+        // inf = inf.toString()
+        return inf
     }
-     else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
-        bot.sendMessage({
-            to: channelID,
-            message:userInfo.getInfo()
-        });
-    }
+    bot.sendMessage({
+        to: channelID,
+        message: inf
+    });
+
 
 });
