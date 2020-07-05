@@ -1,16 +1,17 @@
-
-let myHeaders = new Headers();
-myHeaders.append("Authorization", "{" + process.env.token + "}");
-
-let requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+let request = require('request');
+let options = {
+    'method': 'GET',
+    'url': 'https://discordapp.com/api/users/173027655719845888',
+    'headers': {
+        'Authorization': '{NzI2NzE3ODQyOTU4ODQzOTM2.XwGi6A.WK5j0R_sogzlbXcYcE-rD8FBlpw}'
+    }
 };
-
 class getuserinfo {
     static getInfo() {
-        return fetch("https://discordapp.com/api/users/173027655719845888", requestOptions)
+        request(options, function (error, response) {
+            if (error) throw new Error(error);
+            return response.body;
+        });
     }
 }
 
