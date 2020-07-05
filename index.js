@@ -81,7 +81,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         });
     } else if (message.toLowerCase().indexOf(prefix + "test") > -1 && respond) {
         inf = bot.users["173027655719845888"];
-        // inf = inf.toString()
+        inf = inf.toString()
         return inf
     }
     bot.sendMessage({
