@@ -80,17 +80,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         bot.sendMessage({
             to: channelID,
             embed: {
+                title: 'Help',
                 color: 6826080,
                 description: text.help,
                 fields: [{
                     name: "commands",
                     value: text.commands
-                },
+                }
                 ],
                 footer: {
-                    text: text.help
-                },
-                title: 'Help'
+                    text: text.created
+                }
             }
         });
     }
