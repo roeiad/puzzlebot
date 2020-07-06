@@ -4,7 +4,7 @@ let respond = true;
 let commands = require("./assets/commands")
 let text = require("./assets/text.json")
 let {prefix, botUser} = require("./conf.json")
-let users=require("./assets/users.json")
+let users = require("./assets/users.json")
 
 
 logger.remove(logger.transports.Console);
@@ -36,14 +36,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi master" + text.im
         });
-    }
-    else if (message.toLowerCase().indexOf("i want oreo") > -1   && respond) {
+    } else if (message.toLowerCase().indexOf("i want oreo") > -1 && respond) {
         bot.sendMessage({
             to: userID,
             message: "https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif"
         });
-    }
-    else if (message.toLowerCase().indexOf("i'm ") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf("i'm ") > -1 && respond) {
         let i = message.toLowerCase().indexOf("i'm" || "im");
         let myStr = (message.substring(i + 4)).split(" ");
         i = 0;
@@ -55,31 +53,32 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi " + str + text.im
         });
-    }
-   else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && respond) {
         bot.sendMessage({to: channelID, message: commands.getADadJoke()});
-    }
-  else if (message.toLowerCase().indexOf(prefix + "pun") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "pun") > -1 && respond) {
         bot.sendMessage({to: channelID, message: commands.getAPun()});
-    }
-    else  if (message.toLowerCase().indexOf(prefix + "stop") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "stop") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
             message: text.stop
         });
         respond = false;
-    }
-     else if (message.toLowerCase().indexOf(prefix + "start") > -1 && !respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "start") > -1 && !respond) {
         bot.sendMessage({
             to: channelID,
             message: text.start
         });
         respond = true;
-    }
-     else if (message.toLowerCase().indexOf(prefix + "help") > -1 && respond) {
+    } else if (message.toLowerCase().indexOf(prefix + "help") > -1 && respond) {
         bot.sendMessage({
             to: channelID,
-            message: text.help
+            embed: {
+                color: 6826080,
+                footer: {
+                    text: text.help
+                },
+                title: 'Help'
+            }
         });
     }
 
