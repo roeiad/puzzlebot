@@ -49,10 +49,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             i++;
         }
         let str = myStr[i];
-        bot.sendMessage({
-            to: channelID,
-            message: "Hi " + str + text.im
-        });
+        if (str === "puzzle" || str === "Puzzle") {
+            bot.sendMessage({
+                to: channelID,
+                message: text.puzzle
+            });
+        } else {
+            bot.sendMessage({
+                to: channelID,
+                message: "Hi " + str + text.im
+            });
+        }
     } else if (message.toLowerCase().indexOf(prefix + "dadjoke") > -1 && respond) {
         bot.sendMessage({to: channelID, message: commands.getADadJoke()});
     } else if (message.toLowerCase().indexOf(prefix + "pun") > -1 && respond) {
