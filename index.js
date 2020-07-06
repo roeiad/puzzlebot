@@ -81,6 +81,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             embed: {
                 color: 6826080,
+                description: text.help,
+                fields: [{
+                    name: "commands",
+                    value: text.commands
+                },
+                ],
                 footer: {
                     text: text.help
                 },
