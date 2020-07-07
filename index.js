@@ -36,6 +36,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: "Hi master" + text.im
         });
+    } else if (message.toLowerCase().indexOf("i'm ") > -1 && userID === users.puzzle && respond) {
+        bot.sendMessage({
+            to: channelID,
+            message: text.puzzle
+        });
     } else if (message.toLowerCase().indexOf("i want oreo") > -1 && respond) {
         bot.sendMessage({
             to: userID,
