@@ -1,6 +1,6 @@
 let jokes = require('./dadjokes.json')
 let punList = require('./puns.json')
-let responds=require('puzzle.json')
+let responds=require('./puzzle.json')
 
 class commands {
     static getADadJoke() {
