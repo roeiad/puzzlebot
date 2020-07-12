@@ -25,6 +25,7 @@ bot.on('ready', function (evt) {
 
 bot.on('message', function (user, userID, channelID, message, evt) {
     if (message && user === botUser) return;
+    if (message && user.endsWith("bot")) return;
 
     if (message.toLowerCase().indexOf("i'm ") > -1 && userID === users.meg && respond) {
         bot.sendMessage({
