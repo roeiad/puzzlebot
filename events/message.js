@@ -19,7 +19,7 @@ module.exports = async (client, message) => {
   if (message.content.startsWith("i'm")){
     let msg=message.content
     let i = msg.indexOf("i'm")
-    let myStr =message.content.slice(i.length+4).trim().split(/ +/);
+    let myStr =message.content.slice(i).trim();
     i = 0;
     while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
       i++;
