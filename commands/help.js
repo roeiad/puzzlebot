@@ -55,7 +55,7 @@ exports.help = {
     name: "help",
     category: "commands",
     usage: "puzzle!help",
-    description: "Displays all the available commands for your permission level.",
+    description: "Displays all the available commands.",
 };
 
 
