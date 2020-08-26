@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
+const text = require("../assets/text.json")
 let embedes = new Discord.MessageEmbed()
-    .setColor(0x00AE86);
+    .setFooter(text.created)
 let embcommand = new Discord.MessageEmbed()
-    .setColor(0x00AE86);
+    .setFooter(text.created)
 exports.run = (client, message, args) => {
     if (!args[0]) {
         const myCommands = client.commands;
@@ -22,7 +23,7 @@ exports.run = (client, message, args) => {
         });
         message.channel.send({embed: embedes});
         embedes = new Discord.MessageEmbed()
-            .setColor(0x00AE86);
+            .setFooter(text.created);
     } else {
         let command = args[0];
         command = command.replace('da!', '');
@@ -33,7 +34,7 @@ exports.run = (client, message, args) => {
             embcommand.addField("usage", `${command.help.usage}`);
             embcommand.addField("aliases", `${command.conf.aliases.join(", ")}` || 'no aliases');
             return [message.channel.send({embed: embcommand}), embcommand = new Discord.MessageEmbed()
-                .setColor(0x00AE86)];
+                .setFooter(text.created)];
 
         }
         message.channel.send("this command dose not exist");
@@ -51,7 +52,7 @@ exports.conf = {
 
 exports.help = {
     name: "help",
-    category:"commands",
+    category: "commands",
     usage: "da!help",
     Description: "Displays all the available commands for your permission level.",
 };
