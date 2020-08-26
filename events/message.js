@@ -16,7 +16,17 @@ module.exports = async (client, message) => {
   if (message.content.match(prefixMention)) {
     return message.reply(`My prefix on this guild is \`${settings.prefix}\``);
   }
+  if (message.content.startsWith("i'm")){
+    let i = message.toLowerCase().indexOf("i'm" );
+    let myStr = (message.substring(i + 4)).split(" ");
+    i = 0;
+    while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
+      i++;
+    }
+    let str = myStr[i];
+    await message.channel.send("Hi " + str + text.im)
 
+  }
   // Also good practice to ignore any message that does not start with our prefix,
   // which is set in the configuration file.
   if (message.content.indexOf(settings.prefix) !== 0) return;
@@ -41,17 +51,7 @@ module.exports = async (client, message) => {
   if (cmd && !message.guild && cmd.conf.guildOnly)
     return message.channel.send("This command is unavailable via private message. Please run this command in a guild.");
 
-  if (message.content.startsWith("i'm ")){
-    let i = message.toLowerCase().indexOf("i'm" );
-    let myStr = (message.substring(i + 4)).split(" ");
-    i = 0;
-    while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
-      i++;
-    }
-    let str = myStr[i];
-     await message.channel.send("Hi " + str + text.im)
 
-  }
 
   
   message.flags = [];
