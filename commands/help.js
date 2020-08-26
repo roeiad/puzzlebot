@@ -53,7 +53,7 @@ exports.conf = {
 exports.help = {
     name: "help",
     category: "commands",
-    usage: "da!help",
+    usage: "puzzle!help",
     Description: "Displays all the available commands for your permission level.",
 };
 
