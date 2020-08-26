@@ -27,6 +27,8 @@ module.exports = async (client, message) => {
     let str = myStr[i];
     await message.channel.send("Hi " + str + text.im)
 
+    if (message.content==="i want oreo"){
+      message.author.send("https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif");
   }
   // Also good practice to ignore any message that does not start with our prefix,
   // which is set in the configuration file.
