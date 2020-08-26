@@ -51,7 +51,7 @@ exports.conf = {
 
 exports.help = {
     name: "help",
-    category: "info",
+    category:"commands",
     usage: "da!help",
     Description: "Displays all the available commands for your permission level.",
 };

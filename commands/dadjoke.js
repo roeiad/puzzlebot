@@ -14,6 +14,7 @@ exports.conf = {
 
 exports.help = {
   name: "dadjoke",
+  category:"commands",
   usage:"puzzle!dadjoke",
   description: text.help.dadjoke,
 };

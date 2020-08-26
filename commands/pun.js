@@ -16,6 +16,7 @@ exports.conf = {
 
 exports.help = {
     name: "pun",
+    category:"commands",
     usage: "puzzle!pun",
     description: text.help.pun,
 };

@@ -27,7 +27,6 @@ const init = async () => {
         const response = client.loadCommand(f);
         if (response) console.log(response);
     });
-if(m)
     const evtFiles = await readdir("./events/");
     client.logger.log(`Loading a total of ${evtFiles.length} events.`);
     evtFiles.forEach(file => {
