@@ -5,6 +5,6 @@
   },
   "start": "You've got to be joking me.\nType `!puzzlebotStop` to stop dad facts. \n\n",
   "stop": "There is not stopping puzzletron.  Just kidding.  \nType `!puzzlebotstart` to start me again.",
-  "created":"created by netro\ninspired by puzzle",
+  "created":"created by netro",
   "im": ", I'm puzzlebot!  Pleased to meat you, snot a problem!"
 }
