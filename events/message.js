@@ -17,7 +17,7 @@ module.exports = async (client, message) => {
     return message.reply(`My prefix on this guild is \`${settings.prefix}\``);
   }
   if (message.content.startsWith("i'm")){
-    let i = message.toLowerCase().indexOf("i'm" );
+    let i = message.indexOf("i'm" );
     let myStr = (message.substring(i + 4)).split(" ");
     i = 0;
     while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
