@@ -25,9 +25,8 @@ module.exports = async (client, message) => {
 
     if (cmd && !message.guild && cmd.conf.guildOnly)
         return message.channel.send("This command is unavailable via private message. Please run this command in a guild.");
-    let msgContent = message.content.toLowerCase();
-    if (msgContent.startsWith("i'm")) {
-        let i = msgContent.indexOf("i'm");
+    if (message.content.startsWith("i'm")) {
+        let i = message.content.indexOf("i'm");
         let myStr = message.content.slice(i + 4).split(" ");
         i = 0;
         while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
@@ -36,7 +35,7 @@ module.exports = async (client, message) => {
         let str = myStr[i];
         await message.channel.send("Hi " + str + text.im);
     }
-    if (msgContent === "i want oreo") {
+    if (message.content === "i want oreo") {
         message.author.send("https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif");
     }
     message.flags = [];
