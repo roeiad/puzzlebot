@@ -13,9 +13,9 @@ module.exports = async (client, message) => {
   }
   if (message.content.startsWith("i'm")){
     let msg=message.content.toLowerCase();
-    // let i = msg.indexOf("i'm");
-    let myStr =msg.content.slice(4).split(" ");
-   let i = 0;
+    let i = msg.indexOf("i'm");
+    let myStr =msg.content.slice(i+4).split(" ");
+    i = 0;
     while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
       i++;
     }
