@@ -1,10 +1,10 @@
 const text = require("../assets/text.json");
-const puns = require("../functions/puns")
+const puns = require("../functions/puns");
 
 exports.run = async (client, message) => {
-    let pun = puns.getAPun()
-    await message.channel.send(pun)
-}
+    let pun = puns.getAPun();
+    await message.channel.send(pun);
+};
 
 
 exports.conf = {

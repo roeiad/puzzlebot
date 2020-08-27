@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
-const text = require("../assets/text.json")
+const text = require("../assets/text.json");
 let embedes = new Discord.MessageEmbed()
-    .setFooter(text.created,"https://cdn.discordapp.com/avatars/173027655719845888/ffca213645861ebc351aa1b266644722.png")
+    .setFooter(text.created,"https://cdn.discordapp.com/avatars/173027655719845888/ffca213645861ebc351aa1b266644722.png");
 let embcommand = new Discord.MessageEmbed()
-    .setFooter(text.created,"https://cdn.discordapp.com/avatars/173027655719845888/ffca213645861ebc351aa1b266644722.png")
+    .setFooter(text.created,"https://cdn.discordapp.com/avatars/173027655719845888/ffca213645861ebc351aa1b266644722.png");
 exports.run = (client, message, args) => {
     if (!args[0]) {
         const myCommands = client.commands;
@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
         });
         message.channel.send({embed: embedes});
         embedes = new Discord.MessageEmbed()
-            .setFooter(text.created,"https://cdn.discordapp.com/avatars/173027655719845888/ffca213645861ebc351aa1b266644722.png")
+            .setFooter(text.created,"https://cdn.discordapp.com/avatars/173027655719845888/ffca213645861ebc351aa1b266644722.png");
     } else {
         let command = args[0];
         command = command.replace('da!', '');

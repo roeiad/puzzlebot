@@ -1,8 +1,8 @@
 const joke= require("../functions/dadjokes");
 const text= require("../assets/text.json");
 exports.run = async (client, message) => {
-  let dadjoke= joke.getADadJoke()
-  await message.channel.send(dadjoke)
+  let dadjoke= joke.getADadJoke();
+  await message.channel.send(dadjoke);
 };
 
 exports.conf = {

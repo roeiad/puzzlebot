@@ -1,4 +1,4 @@
-let jokes = require('../assets/dadjokes.json')
+let jokes = require('../assets/dadjokes.json');
 
 class dadjokes {
     static getADadJoke() {
@@ -7,4 +7,4 @@ class dadjokes {
     }
 
 }
-module.exports=dadjokes
+module.exports=dadjokes;

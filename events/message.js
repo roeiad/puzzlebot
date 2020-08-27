@@ -1,5 +1,5 @@
 
-let text =require("../assets/text.json")
+let text =require("../assets/text.json");
 module.exports = async (client, message) => {
 
   if (message.author.bot) return;
@@ -12,15 +12,15 @@ module.exports = async (client, message) => {
     return message.reply(`My prefix on this guild is \`${settings.prefix}\``);
   }
   if (message.content.startsWith("i'm")){
-    let msg=message.content
-    let i = msg.indexOf("i'm")
-    let myStr =message.content.slice(i+4).split(" ");
-    i = 0;
+    let msg=message.content.toLowerCase();
+    // let i = msg.indexOf("i'm");
+    let myStr =msg.content.slice(4).split(" ");
+   let i = 0;
     while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
       i++;
     }
     let str = myStr[i];
-    await message.channel.send("Hi " + str + text.im)
+    await message.channel.send("Hi " + str + text.im);
   }
     if (message.content==="i want oreo"){
       message.author.send("https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif");
