@@ -1,7 +1,6 @@
 let text = require("../assets/text.json");
-
+let msgContent;
 module.exports = async (client, message) => {
-    let msgContent = message.content.toLowerCase();
     if (message.author.bot) return;
 
 
@@ -27,6 +26,7 @@ module.exports = async (client, message) => {
 
     if (cmd && !message.guild && cmd.conf.guildOnly)
         return message.channel.send("This command is unavailable via private message. Please run this command in a guild.");
+    msgContent = message.content.toLowerCase();
 
     if (msgContent.startsWith("i'm")) {
         let i = msgContent.indexOf("i'm");
