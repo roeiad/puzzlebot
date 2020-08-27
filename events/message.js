@@ -1,5 +1,4 @@
 let text = require("../assets/text.json");
-let msgContent;
 module.exports = async (client, message) => {
     if (message.author.bot) return;
 
@@ -26,13 +25,12 @@ module.exports = async (client, message) => {
 
     if (cmd && !message.guild && cmd.conf.guildOnly)
         return message.channel.send("This command is unavailable via private message. Please run this command in a guild.");
-    msgContent = message.content.toLowerCase();
-
+    let msgContent = message.content.toLowerCase();
     if (msgContent.startsWith("i'm")) {
         let i = msgContent.indexOf("i'm");
-        let myStr = msgContent.slice(i + 4).split(" ");
+        let myStr = message.content.slice(i + 4).split(" ");
         i = 0;
-        while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an") {
+        while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
             i++;
         }
         let str = myStr[i];
