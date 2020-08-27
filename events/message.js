@@ -1,6 +1,7 @@
 let text = require("../assets/text.json");
-module.exports = async (client, message) => {
 
+module.exports = async (client, message) => {
+    let msgContent = message.content.toLowerCase();
     if (message.author.bot) return;
 
 
@@ -10,20 +11,7 @@ module.exports = async (client, message) => {
     if (message.content.match(prefixMention)) {
         return message.reply(`My prefix on this guild is \`${settings.prefix}\``);
     }
-    let msgcontent = message.content.toLowerCase();
-    if (msgcontent.startsWith("i'm")) {
-        let i = msgcontent.indexOf("i'm");
-        let myStr = message.content.slice(i + 4).split(" ");
-        i = 0;
-        while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
-            i++;
-        }
-        let str = myStr[i];
-        await message.channel.send("Hi " + str + text.im);
-    }
-    if (message.content === "i want oreo") {
-        message.author.send("https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif");
-    }
+
 
     if (message.content.indexOf(settings.prefix) !== 0) return;
 
@@ -31,7 +19,6 @@ module.exports = async (client, message) => {
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    // If the member on a guild is invisible or not cached, fetch them.
     if (message.guild && !message.member) await message.guild.fetchMember(message.author);
 
 
@@ -41,7 +28,19 @@ module.exports = async (client, message) => {
     if (cmd && !message.guild && cmd.conf.guildOnly)
         return message.channel.send("This command is unavailable via private message. Please run this command in a guild.");
 
-
+    if (msgContent.startsWith("i'm")) {
+        let i = msgContent.indexOf("i'm");
+        let myStr = msgContent.slice(i + 4).split(" ");
+        i = 0;
+        while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an") {
+            i++;
+        }
+        let str = myStr[i];
+        await message.channel.send("Hi " + str + text.im);
+    }
+    if (msgContent === "i want oreo") {
+        message.author.send("https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif");
+    }
     message.flags = [];
     while (args[0] && args[0][0] === "-") {
         message.flags.push(args.shift().slice(1));
