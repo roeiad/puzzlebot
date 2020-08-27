@@ -11,10 +11,10 @@ module.exports = async (client, message) => {
   if (message.content.match(prefixMention)) {
     return message.reply(`My prefix on this guild is \`${settings.prefix}\``);
   }
-  if (message.content.startsWith("i'm")){
+  if (message.content.toLowerCase.startsWith("i'm")){
     let msg=message.content.toLowerCase();
     let i = msg.indexOf("i'm");
-    let myStr =msg.content.slice(i+4).split(" ");
+    let myStr =message.content.slice(i+4).split(" ");
     i = 0;
     while (myStr[i] === "" || myStr[i] === "a" || myStr[i] === "the" || myStr[i] === "an" || myStr[i] === "The" || myStr[i] === "An" || myStr[i] === "A") {
       i++;
