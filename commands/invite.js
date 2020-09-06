@@ -12,7 +12,7 @@ exports.conf = {
 
 exports.help = {
     name: "invite",
-    usage:"puzzle!invite",
+    usage:"invite",
     category: "commands",
     description: text.help.invite,
 };
