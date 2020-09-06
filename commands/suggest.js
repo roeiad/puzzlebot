@@ -45,7 +45,6 @@ exports.conf = {
 exports.help = {
     name: "suggest",
     usage: "suggest",
-    SDescription: "Send your Suggestion",
-    LDescription: "suggest a new command for me",
+    description: "suggest a new command for me",
     category: "other"
 };
