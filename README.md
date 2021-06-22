@@ -1,6 +1,6 @@
 # puzzlebot
 
-Base on [DiscordDadBot](https://github.com/willmac321/DiscordDadBot) by [willmac321](https://github.com/willmac321) with added puns 
+Base on [guidbot](https://github.com/AnIdiotsGuide/guidebot) by [AnIdiotsGuide](https://github.com/AnIdiotsGuide) with added puns and commands
 
 | Command       | Description                                                                                                              
 | ------------- | ------------------------------------------------------------------------------------------------------------------------- 
