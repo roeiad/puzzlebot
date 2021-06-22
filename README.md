@@ -1,6 +1,6 @@
 # puzzlebot
 
-Base on [guidbot](https://github.com/AnIdiotsGuide/guidebot) by [AnIdiotsGuide](https://github.com/AnIdiotsGuide) with added puns and commands
+Base on [guide bot](https://github.com/AnIdiotsGuide/guidebot) by [AnIdiotsGuide](https://github.com/AnIdiotsGuide) with added puns and commands
 
 | Command       | Description                                                                                                              
 | ------------- | ------------------------------------------------------------------------------------------------------------------------- 
